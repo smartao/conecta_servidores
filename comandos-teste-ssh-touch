@@ -1,0 +1,1 @@
+ssh -p ${PORTASSH[$s]} -i /root/.ssh/id_rsa $USER@${IP[$s]} touch /tmp/1

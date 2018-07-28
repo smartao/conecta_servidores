@@ -1,0 +1,8 @@
+ssh -p ${PORTASSH[$s]} -i /root/.ssh-backup/id_rsa $USER@${IP[$s]} mkdir -p /home/brqssh/.ssh
+ssh -p ${PORTASSH[$s]} -i /root/.ssh-backup/id_rsa $USER@${IP[$s]} rm /root/.ssh/id_rsa*
+ssh -p ${PORTASSH[$s]} -i /root/.ssh-backup/id_rsa $USER@${IP[$s]} rm /home/brqssh/.ssh/authorized_keys*
+ssh -p ${PORTASSH[$s]} -i /root/.ssh-backup/id_rsa $USER@${IP[$s]} rm /home/brqssh/.ssh/id_rsa*
+scp -P ${PORTASSH[$s]} -i /root/.ssh-backup/id_rsa /root/.ssh/authorized_keys $USER@${IP[$s]}:/root/.ssh
+scp -P ${PORTASSH[$s]} -i /root/.ssh-baclup/id_rsa /root/.ssh/authorized_keys $USER@${IP[$s]}:/home/brqssh/.ssh
+ssh -p ${PORTASSH[$s]} $USER@${IP[$s]} chmod 600 /home/brqssh/.ssh/authorized_keys
+ssh -p ${PORTASSH[$s]} $USER@${IP[$s]} chown -R brqssh:brqssh /home/brqssh/.ssh

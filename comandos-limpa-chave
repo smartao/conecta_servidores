@@ -1,0 +1,4 @@
+ssh -p ${PORTASSH[$s]} $USER@${IP[$s]} rm /root/.ssh/authorized_keys[123]
+ssh -p ${PORTASSH[$s]} $USER@${IP[$s]} rm /root/.ssh/authorized_keys.*
+ssh -p ${PORTASSH[$s]} $USER@${IP[$s]} rm /home/brqssh/.ssh/authorized_keys[123]
+ssh -p ${PORTASSH[$s]} $USER@${IP[$s]} rm /home/brqssh/.ssh/authorized_keys.*
